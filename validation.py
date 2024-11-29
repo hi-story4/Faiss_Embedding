@@ -1,5 +1,4 @@
 from file import read_json_file
-
 class ProfileFieldMapper:
    def __init__(self):
        self.field_mapping = {
@@ -162,6 +161,7 @@ def validMatching(profile, target, priority):
         profile_field_value = mapper.get_value(profile, field)
         if profile_field_value is not None:
             if(field == 'height' or field == 'salary'):
+
                 isValid = between(profile_field_value ,value['from'], value['to'])
                 if not isValid:
                     return False
